@@ -26,7 +26,7 @@ public class CoordinatesServiceImpl implements CoordinatesService {
     @Override
     public List<CoordinatesEntity> getCoordinatesByAddress(String address) {
         List<CoordinatesEntity> coordinatesByAddress = coordinatesApi
-                .getCoordinatesByAddress(address);
+                .getCoordinatesByAddress(address.replaceAll(" ", "%20"));
         return saveCoordinates(coordinatesByAddress);
     }
 
